@@ -1,11 +1,13 @@
-import { getGamesBusiness } from "../services/applicatif";
+import { getGamesBusinessWithSuccess } from "../services/applicatif";
 import { getGamesInfra } from "../services/infrastructure";
 import { GameRowFinal } from "./GameRowFinal";
 
 // Head component : il sait les data => le state
 export const ListGameFinal = () => {
-  const games = getGamesBusiness(getGamesInfra);
+  // State
+  const games = getGamesBusinessWithSuccess(getGamesInfra);
 
+  // pour plus tard : à mettre dans une fonction => donc un tsx
   const elementsTsx = games.map((element) => (
     <GameRowFinal key={element.id} game={element}></GameRowFinal>
   ));
@@ -13,6 +15,7 @@ export const ListGameFinal = () => {
   return (
     <>
       <h1>List Game Final</h1>
+      
       <table>
         <thead>
           <tr>
