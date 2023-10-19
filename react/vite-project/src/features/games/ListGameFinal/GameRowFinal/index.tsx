@@ -6,11 +6,15 @@
 //     success: string;
 // }
 
-export const GameRowFinal = () => {
+import { Game } from "../../models/game";
+
+type Props = { game: Game };
+
+export const GameRowFinal = (props: Props) => {
     // pas un tableau ici :'( juste lr dernier tr
     return (
         <>
-            <tr><td>Coucou</td></tr>
+            <tr><td>{props.game.title}</td></tr>
         </>
     );
     // return (
