@@ -3,8 +3,18 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "config": {
+    
+  },
   "scripts": {
+    "predev": "echo 'juste avant vite'",
     "dev": "vite",
+    "postdev": "echo 'apres'",
+
+    "prestart": "echo 'ah que johny'",
+    "start": "npm run dev",
+
+
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
