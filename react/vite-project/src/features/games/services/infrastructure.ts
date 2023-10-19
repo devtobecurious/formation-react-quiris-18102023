@@ -1,5 +1,20 @@
+import { Species } from "../models/espece";
 import { Games } from "../models/game";
 
+//#region Espèces
+export function getSpeciesRaw(): Species {
+    return [
+        {id:1, libelle: 'Humain'},
+        {id:2, libelle: 'Nain'}
+    ]
+} 
+
+export function getSpeciesBusiness(infra: () => Species) {
+    return infra();
+}
+//#endregion
+
+//#region Games
 /**
  * Retourne la liste des games (sync)
  */
@@ -25,4 +40,5 @@ export function getGamesInfraTableauEnMemoire(): Games {
         }
     ];
 }
+//#endregion
 
