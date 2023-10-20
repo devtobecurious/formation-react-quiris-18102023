@@ -1,11 +1,15 @@
+import { useContext } from "react";
 import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { AuthenticateUserContext } from "../../../../features/authentication/models";
 
 export const MenuDefault = () => {
+  const userState = useContext(AuthenticateUserContext);
+
     return  (
     <Navbar expand="lg" className="bg-body-tertiary">
     <Container>
-      <Navbar.Brand href="#home">Mes parties HP</Navbar.Brand>
+      <Navbar.Brand href="#home">Mes parties HP ({userState.user?.prenom})</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">

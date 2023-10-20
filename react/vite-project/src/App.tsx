@@ -3,16 +3,19 @@ import './App.css'
 import { MenuDefault } from './shared/ui/menus/MenuDefault'
 import { ListGamePage } from './pages/ListGamePage'
 import { ListPeoplePage } from './pages/ListPeoplePage'
+import { AuthenticateProviderContext } from './features/authentication/models/AuthenticateProviderContext'
 
 function App() {
   return (
     <>
-      <MenuDefault></MenuDefault>
+      <AuthenticateProviderContext>
+        <MenuDefault></MenuDefault>
 
-      <Routes>
-        <Route path="/games" element={<ListGamePage></ListGamePage>}></Route>
-        <Route path="/people" element={<ListPeoplePage></ListPeoplePage>}></Route>
-      </Routes>
+        <Routes>
+          <Route path="/games" element={<ListGamePage></ListGamePage>}></Route>
+          <Route path="/people" element={<ListPeoplePage></ListPeoplePage>}></Route>
+        </Routes>
+      </AuthenticateProviderContext>
       {/* <ListGamePage></ListGamePage> */}
       {/* <ListPeoplePage></ListPeoplePage> */}
     </>
